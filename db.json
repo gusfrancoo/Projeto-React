@@ -1,0 +1,17 @@
+{
+    "produtos": [
+        {
+            "id": 1,
+            "name": "Hogwarts Legacy",
+            "price": 69.99,
+            "tipo": "Jogos",
+            "descricao": "Novo jogo se passando no universo de Harry Potter. O jogo se passa em Hogwarts e te permite ter uma experiencia parecida com filmes da saga!",
+            "imageSrc": "/img/hogwarts_legacy.jpg"
+        }
+    ],
+    "usuario": [
+        
+    ]
+    
+}
+

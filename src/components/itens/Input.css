@@ -1,0 +1,11 @@
+.form-label{
+    margin: 0.5em;
+}
+
+.form-group  {
+    margin-top: 1em;
+}
+
+.form-group label{
+    position: relative;
+}

@@ -1,0 +1,66 @@
+
+body.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+body.visivle {
+    opacity: 1;
+}
+
+.card-body h3 {
+    color: white;
+    position: relative;
+
+}
+
+
+
+.card-img-top{
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+    transition: transform 0.3s ease, z-index 0.3s ease; /* transição suave */
+    z-index: 1; /* z-index padrão */
+    margin-top: 10px;
+
+}
+
+.card:hover .card_img_top {
+    transform: scale(1.2); /* amplia a imagem em 20% */
+    z-index: 2; /* aumenta o z-index para garantir que fique acima dos elementos adjacentes */
+}
+
+.color-custom{
+    color: white;
+
+}
+
+.row{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.row div{
+    width: 19rem;
+}
+
+.card {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 1.1);
+    background-color: #222;
+
+}
+
+
+.card-title{
+    color: white;
+}
+
+.card-text{
+    color: white;
+}
+
+h4{
+    color: white;
+}
