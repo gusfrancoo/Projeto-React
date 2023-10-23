@@ -1,12 +1,10 @@
 import InputProps from "../../interfaces/InputProps.interface"
-import "./Input.css"
+import styles from "./Input.module.css"
 
 const Input: React.FC<InputProps> = ({type, text, name, placeholder, handleOnChange, value}) => {
     return(
-        <div className="form-group row">
-            <div>
-                <label className="col-form-label col-md-1 text-md-right" htmlFor={name}> {text}: </label>
-            </div>
+        <div className={`form-group row ${styles.form_group}`}>
+            <label className="col-form-label col-md-1 text-md-right" htmlFor={name}> {text}: </label>
             <div className="col-md-4">
                 <input className="form-control" type={type} 
                         name={name}

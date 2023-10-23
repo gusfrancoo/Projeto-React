@@ -1,4 +1,4 @@
-import "./Row.css";
+import styles from "./Row.module.css";
 import {ReactNode} from 'react';
 
 interface RowProps{
@@ -7,7 +7,7 @@ interface RowProps{
 
 function Row({children}: RowProps){
     return(
-        <div className="row">
+        <div className={`row ${styles.row}`}>
             {children}
         </div>
     )

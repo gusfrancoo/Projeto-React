@@ -1,17 +1,38 @@
 {
-    "produtos": [
-        {
-            "id": 1,
-            "name": "Hogwarts Legacy",
-            "price": 69.99,
-            "tipo": "Jogos",
-            "descricao": "Novo jogo se passando no universo de Harry Potter. O jogo se passa em Hogwarts e te permite ter uma experiencia parecida com filmes da saga!",
-            "imageSrc": "/img/hogwarts_legacy.jpg"
-        }
-    ],
-    "usuario": [
-        
-    ]
-    
+  "produtos": [
+    {
+      "id": 1,
+      "name": "Hogwarts Legacy",
+      "price": 69.99,
+      "tipo": "Jogos",
+      "descricao": "Novo jogo se passando no universo de Harry Potter. O jogo se passa em Hogwarts e te permite ter uma experiencia parecida com filmes da saga!",
+      "imageSrc": "/img/hogwarts_legacy.jpg"
+    }
+  ],
+  "usuario": [
+    {
+      "name": "Gustavo ",
+      "email": "gustafranco2543@gmail.com",
+      "senha": "12345",
+      "cidade": "Divinoia",
+      "uf": "MG",
+      "id": 1
+    },
+    {
+      "name": "Cruzeiro",
+      "email": "cruzeiro@gmail.com",
+      "senha": "12345",
+      "cidade": "BH e nois",
+      "uf": "MG",
+      "id": 2
+    },
+    {
+      "name": "Gustavin ohh++Brabo",
+      "email": "bololohaha@gmail.com",
+      "senha": "12345",
+      "cidade": "Divinoia",
+      "uf": "MG",
+      "id": 3
+    }
+  ]
 }
-

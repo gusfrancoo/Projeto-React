@@ -34,6 +34,11 @@ function App() {
             <Cadastro />
           </Layout>
         }/>
+        <Route path='/login' element = {
+          <Layout>
+            <Cadastro />
+          </Layout>
+        }/>
       </Routes>
     </Router>
   );

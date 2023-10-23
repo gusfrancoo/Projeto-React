@@ -4,7 +4,7 @@ import Usuario from "../../interfaces/Usuario.interface";
 import Input from "./Input";
 import SubmitButton from "./SubmitButton";
 import Row from "../layouts/Row";
-import "./ItemForm.css";
+import styles from "./ItemForm.module.css";
 
 
 function ItemForm({handleSubmit, userData, btnText}: ItemFormProps){
@@ -26,7 +26,7 @@ function ItemForm({handleSubmit, userData, btnText}: ItemFormProps){
 
 
     return(
-            <form className="row g-3" onSubmit={submit}>
+            <form className={`row g-3 ${styles.row}`} onSubmit={submit}>
                     <h1>
                         Cadastre-se
                     </h1>
@@ -36,35 +36,35 @@ function ItemForm({handleSubmit, userData, btnText}: ItemFormProps){
                         name="name"
                         placeholder="Insira seu Nome"
                         handleOnChange={handleChange}
-                        value={usuario.nome ? usuario.nome : ""} />
+                        value={usuario.nome} />
                     <Input 
                         type="text"
                         text="Email"
-                        name="Email"
+                        name="email"
                         placeholder="example@email.com"
                         handleOnChange={handleChange}
-                        value={usuario.email ? usuario.email : ""} />
+                        value={usuario.email} />
                     <Input 
                         type="password"
                         text="Senha"
-                        name="Senha"
+                        name="senha"
                         placeholder="Insira sua senha"
                         handleOnChange={handleChange}
-                        value={usuario.senha ? usuario.senha : ""} />
+                        value={usuario.senha } />
                     <Input 
                         type="text"
                         text="Cidade"
-                        name="Cidade"
+                        name="cidade"
                         placeholder="insira sua cidade"
                         handleOnChange={handleChange}
-                        value={usuario.cidade ? usuario.cidade : ""} />
+                        value={usuario.cidade} />
                     <Input 
                         type="text"
                         text="UF"
-                        name="UF"
+                        name="uf"
                         placeholder="Insira UF da cidade"
                         handleOnChange={handleChange}
-                        value={usuario.uf ? usuario.uf : ""} />
+                        value={usuario.uf } />
                         
                     <div>
                         <SubmitButton text={btnText} />

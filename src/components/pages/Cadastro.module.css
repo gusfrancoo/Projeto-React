@@ -1,11 +1,11 @@
-.container_custom {
+.container {
     background-color: #222;
-    margin-top: 2em;
+    margin-top: 2em  !important;
     border-radius: 10px;
     box-shadow: 0 6px 10px #222;
     display: flex;
     justify-content: center;
-    width: 60%;
+    width: 60% !important;
 
 }
  
