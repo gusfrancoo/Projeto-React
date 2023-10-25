@@ -1,0 +1,14 @@
+.row h1{
+    color: white;
+    text-align: center;
+}
+
+.btn{
+    height: 2.5em;
+    margin-bottom: 5em;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}

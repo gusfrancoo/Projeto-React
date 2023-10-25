@@ -1,10 +1,11 @@
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import Container from './components/layouts/Container';
 import Navbar from './components/layouts/Navbar';
 import Home from "./components/pages/Home";
 import Cadastro from "./components/pages/Cadastro";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './components/pages/Login';
 
 
 interface LayoutProps {
@@ -24,7 +25,14 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path='/' element = {
+        <Route path="/" element={<Navigate to="/login" />} />
+        
+        <Route path='/login' element = {
+          <Layout>
+            <Login />
+          </Layout>
+        }/>
+        <Route path='/home' element = {
           <Layout>
             <Home />
           </Layout>
@@ -34,11 +42,7 @@ function App() {
             <Cadastro />
           </Layout>
         }/>
-        <Route path='/login' element = {
-          <Layout>
-            <Cadastro />
-          </Layout>
-        }/>
+
       </Routes>
     </Router>
   );

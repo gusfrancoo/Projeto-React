@@ -23,3 +23,10 @@
     flex-direction: column;
     justify-content: flex-start;
 }
+
+.container button {
+    margin-top: 0.5em;
+    height: 2.5em;
+    width: 10em;
+    
+} 

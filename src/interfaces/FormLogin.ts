@@ -6,4 +6,4 @@ interface FormLoginProps {
 
 }
   
-  export default ItemFormProps;
+  export default FormLoginProps;

@@ -28,12 +28,12 @@ function Cadastro(){
         
         if(response.ok){
             console.log("Usuario criado com Sucesso.")
-            history("/");
+            history("/home");
             return;
         }
     }
 
-    const verificaUsuario = async (usuario) => {
+    const verificaUsuario = async (usuario: Usuario) => {
         const checkUser = await fetch(`http://localhost:8080/usuario?email=${usuario}`, {
             method: "GET",
             headers:{
