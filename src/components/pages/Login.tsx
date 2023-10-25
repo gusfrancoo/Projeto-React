@@ -10,12 +10,6 @@ function Login(){
     const redirect = useNavigate();
     const [msg, setMensagem] = useState("");
 
-    // Usar na pagina home após cadastrar um produto.
-    // let mensagem = "";
-
-    // if (location.state) {
-    //     mensagem = location.state.mensagem;
-    // }
 
     const getUser = async (userData : Usuario) => {
 

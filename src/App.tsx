@@ -6,6 +6,7 @@ import Home from "./components/pages/Home";
 import Cadastro from "./components/pages/Cadastro";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/pages/Login';
+import CriaProduto from './components/pages/CriaProduto';
 
 
 interface LayoutProps {
@@ -40,6 +41,11 @@ function App() {
         <Route path='/cadastro' element = {
           <Layout>
             <Cadastro />
+          </Layout>
+        }/>
+        <Route path='/criaProduto' element = {
+          <Layout>
+            <CriaProduto />
           </Layout>
         }/>
 

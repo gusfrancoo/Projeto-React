@@ -15,7 +15,6 @@ function FormLogin({handleSubmit, loginData, btnText}: FormLoginProps){
         val.preventDefault();
         handleSubmit(login);
     }
-    
         
     function handleChange (val: any){
         setLogin(

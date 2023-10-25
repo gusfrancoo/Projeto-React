@@ -24,7 +24,6 @@ function Home (){
         })
         .then((response)=> response.json())
         .then((data) => {
-            console.log(data);
             setProdutos(data);
         })
         .catch((erro)=> console.log(erro));
