@@ -21,7 +21,6 @@ function FormCriaProduto ({handleSubmit, produtoData, btnText}: FormCriaProdutoP
             {...produto, 
                 [val.target.name]: val.target.value}
         );
-        // console.log(produto);
     }
 
 

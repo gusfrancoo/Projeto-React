@@ -53,7 +53,6 @@ function Home (){
                 </Row>
                 
             ))}
-            <button type="button" onClick={novoProduto} className="btn btn-dark">Novo Produto</button>
             {groupedProducts.length === 0 &&
                 <p>Não há Produtos</p>
             }

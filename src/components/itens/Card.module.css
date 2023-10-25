@@ -42,8 +42,8 @@ body.visivle {
     margin-top: 50px;
 }
 
-.row div{
-    width: 18rem;
+.card div{
+    
 }
 
 .card {
@@ -51,6 +51,8 @@ body.visivle {
     background-color: #222 !important;
     margin-top: 0.5em !important;
     height: 28em !important;
+    margin: 1em;
+    width: 20rem !important;
 
 }
 

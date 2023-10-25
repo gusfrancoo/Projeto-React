@@ -6,8 +6,7 @@ import styles from "./Navbar.module.css";
 
 function Navbar(){
     return (
-        <nav className={styles.navbar}>
-            <Container>
+        <nav className={` ${styles.navbar}`}>
                 <Link to={"/"}>
                     <img src={logo} className={styles.img} alt="Logo" />
                 </Link>
@@ -18,6 +17,10 @@ function Navbar(){
                     </li>
 
                     <li className={styles.item}>
+                        <Link to="/criaProduto">Novo Produto</Link>
+                    </li>
+
+                    <li className={styles.item}>
                         <Link to="/cadastro">Cadastre-se</Link>
                     </li>
 
@@ -25,8 +28,6 @@ function Navbar(){
                         <Link to="/login">Entrar</Link>
                     </li>
                 </ul>
-            </Container>
-
         </nav>
     )
 }

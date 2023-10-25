@@ -3,10 +3,34 @@
     {
       "id": 1,
       "name": "Hogwarts Legacy",
-      "price": 69.99,
+      "price": 99.99,
       "tipo": "Jogos",
       "descricao": "Novo jogo se passando no universo de Harry Potter. O jogo se passa em Hogwarts e te permite ter uma experiencia parecida com filmes da saga!",
       "imageSrc": "/img/hogwarts_legacy.jpg"
+    },
+    {
+      "name": "EA FC 2024",
+      "price": "99.99",
+      "tipo": "Jogo",
+      "descricao": "EA FC 2024 é o Fifa de cara nova! EA Sports mudou sua identidade visual para o game Fifa após acabar parceria com a Federação Internacional de Futebol",
+      "imageSrc": "/img/ea-fc.jpeg",
+      "id": 2
+    },
+    {
+      "name": "Spider-Man 2",
+      "price": "99.99",
+      "tipo": "Jogo",
+      "descricao": "Lançamento da nova trilogia do Spider-Man para Playstation",
+      "imageSrc": "/img/spider-man.jpeg",
+      "id": 3
+    },
+    {
+      "name": "Grand Theft Auto 5",
+      "price": "99.99",
+      "tipo": "Jogo",
+      "descricao": "GTA 5 te permite ter total liberdade de ações e locomoção no mapa. Uma grande história com muita ação!",
+      "imageSrc": "/img/gta-5.jpeg",
+      "id": 4
     }
   ],
   "usuario": [

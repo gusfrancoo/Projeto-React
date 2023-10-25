@@ -1,10 +1,12 @@
 .container {
-    width: 1200px;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 auto;
-}
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 20px;
+  }
 
 .cadContainer{
     display: flex;
@@ -19,6 +21,7 @@
 .start {
     justify-content: flex-start;
 }
+
 .column {
     flex-direction: column;
     justify-content: flex-start;
