@@ -6,10 +6,17 @@ import { useLocation, useNavigate } from 'react-router-dom';
 // import styles from "./Home.module.css";
 import Row from "../layouts/Row";
 import "./Home.module.css"
+import Mensagem from "../layouts/Mensagem";
 
 function Home (){
+    const location = useLocation();
     const [produtos, setProdutos] = useState<Produto[]>([]);
     const redirect = useNavigate();
+
+    let mensagem = "";
+    if (location.state) {
+        mensagem = location.state.mensagem;
+    }
     
     const novoProduto = () =>{
         redirect("/criaProduto");
@@ -44,6 +51,7 @@ function Home (){
 
     return (
         <>
+            {mensagem && <Mensagem msg={mensagem} type="sucesso" />}
             {groupedProducts.length > 0 &&
             groupedProducts.map((group, index)=>(
                 <Row key={index}>

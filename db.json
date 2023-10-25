@@ -31,6 +31,14 @@
       "descricao": "GTA 5 te permite ter total liberdade de ações e locomoção no mapa. Uma grande história com muita ação!",
       "imageSrc": "/img/gta-5.jpeg",
       "id": 4
+    },
+    {
+      "name": "aaaaaaa",
+      "price": "99.99",
+      "tipo": "Jogo",
+      "descricao": "CRUZEIRO ESPORTECLUBE",
+      "imageSrc": "/img/ea-fc.jpeg",
+      "id": 5
     }
   ],
   "usuario": [
@@ -57,6 +65,14 @@
       "cidade": "Divinoia",
       "uf": "MG",
       "id": 3
+    },
+    {
+      "name": "gustavin brabissimo",
+      "email": "hbshbhsfg@gmail.com",
+      "senha": "12345",
+      "cidade": "Divinópolis",
+      "uf": "Mg",
+      "id": 4
     }
   ]
 }
