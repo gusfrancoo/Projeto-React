@@ -17,7 +17,7 @@ Protótipo de um sistema de vendas de jogos. Esse foi um projeto realizado para 
 <br>
 
 
-<h4> 1.1 - Instruções </h4>
+<h4> 1.2 - Instruções </h4>
 
 
 <br>
