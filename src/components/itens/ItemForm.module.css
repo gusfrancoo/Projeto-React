@@ -1,5 +1,8 @@
-label{
-    color: white;
+.row{
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    justify-content: start;
 }
 
 .row h1{
@@ -12,5 +15,4 @@ label{
 h3 {
     color: white;
     position: relative;
-
 }

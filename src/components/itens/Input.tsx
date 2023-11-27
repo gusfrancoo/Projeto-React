@@ -5,7 +5,7 @@ const Input: React.FC<InputProps> = ({type, text, name, placeholder, handleOnCha
     return(
         <div className={`form-group row ${styles.form_group}`}>
             <label className={`col-md-1 text-md-right ${styles.form_label}`} htmlFor={name}> {text}: </label>
-            <div className="col-md-4">
+            <div className="col-md-9">
                 <input className={`form-control ${styles.form_control}`} type={type} 
                         name={name}
                         id={name}
