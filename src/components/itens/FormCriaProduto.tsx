@@ -5,27 +5,35 @@ import Row from "../layouts/Row";
 import { useState, useEffect } from "react";
 import SubmitButton from "./SubmitButton";
 
-
-
 function FormCriaProduto ({handleSubmit, produtoData, btnText}: FormCriaProdutoProps){
 
     const [produto, setProduto] = useState(produtoData || {});
+    const [images, setImages] = useState([]);
 
     const submit = async (val: any) => {
         val.preventDefault();
-        handleSubmit(produto);
+        handleSubmit({...produto, images});
+        Swal.fire({
+            title: "Jogo Publicado!",
+            text: "Clique no botão para prosseguir!",
+            icon: "success"
+          });
     }
 
     function handleChange (val: any){
-        setProduto(
-            {...produto, 
-                [val.target.name]: val.target.value}
-        );
+        if (val.target.name === 'images') {
+            const files = Array.from(val.target.files);
+            setImages(files);
+            
+        } else {
+            setProduto(
+                {...produto, 
+                    [val.target.name]: val.target.value}
+            );
+        }
     }
 
-
     return(
-
         <form className={`row g-3 ${styles.row}`} onSubmit={submit}>
                 <h1>
                     Cadastrar Produto
@@ -62,23 +70,18 @@ function FormCriaProduto ({handleSubmit, produtoData, btnText}: FormCriaProdutoP
                     handleOnChange={handleChange}
                     value={produto.descricao}
                     />
-                
                 <Input 
-                    type="text"
-                    text="Src"
-                    name="imageSrc"
-                    placeholder="Caminho da imagem: "
+                    type="file"
+                    text="Imagens"
+                    name="images"
                     handleOnChange={handleChange}
-                    value={produto.imageSrc}
+                    multiple
                     />
             
             <div>
                 <SubmitButton text="Criar"/>
             </div>
-            
-
         </form>
     )
-
 }
 export default FormCriaProduto;

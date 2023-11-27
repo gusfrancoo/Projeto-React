@@ -14,6 +14,11 @@ function FormLogin({handleSubmit, loginData, btnText}: FormLoginProps){
     const submit = (val: any) => {
         val.preventDefault();
         handleSubmit(login);
+        Swal.fire({
+            title: "Login Realizado com sucesso!",
+            text: "Clique no botão para prosseguir!",
+            icon: "success"
+          });
     }
         
     function handleChange (val: any){
