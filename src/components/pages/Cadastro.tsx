@@ -18,7 +18,7 @@ function Cadastro(){
             return;
         }
         
-        const response = await fetch("http://localhost:8080/usuario", {
+        const response = await fetch("http://localhost:8080/pessoa", {
             method: "POST",
             headers:{
                 'Content-Type':'application/json'
@@ -34,7 +34,7 @@ function Cadastro(){
     }
 
     const verificaUsuario = async (usuario: Usuario) => {
-        const checkUser = await fetch(`http://localhost:8080/usuario?email=${usuario}`, {
+        const checkUser = await fetch(`http://localhost:8080/pessoa/${usuario}`, {
             method: "GET",
             headers:{
                 'Content-Type':'application/json'
