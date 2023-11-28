@@ -25,8 +25,7 @@ body,
   height: 100%;
 } */
 body{
-  background-image: url('/img/background.jpg');
+  background-image: url('https://64.media.tumblr.com/3f3986ec1e94210dd9de27945a7f0bde/tumblr_ondkf5LDE41qbw2q1o1_1280.gif');
   background-repeat: no-repeat;
-  background-position: center center;
   background-size: cover;
 }

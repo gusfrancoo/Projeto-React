@@ -14,7 +14,7 @@ function Card ({produto}: {produto: Produto}){
             <img src={produto.imageSrc} className={`card-img-top ${styles.card_img_top}`} alt="" />
             <div className={`row ${styles.row}`}>
                 <div className={`card-body ${styles.card_body}`}>
-                    <h5 className={`card-title ${styles.card_title}`}>{produto.name}</h5>
+                    <h2 className={`card-title ${styles.card_title}`}>{produto.name}</h2>
                     <p className={`card-text ${styles.card_text}`}>{produto.descricao}</p>
                     <h4>Valor: {produto.price}</h4>
 
