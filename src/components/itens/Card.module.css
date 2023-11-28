@@ -74,8 +74,28 @@ body.visivle {
 }
 
 .card_text{
+    margin-top: 10px;
     color: white;
 }
+
+.price-button-container {
+    display: flex;
+    align-items: center;
+}
+
+.buyButton {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: 10px; /* Espaço entre o botão e o preço */
+}
+
+/* Outras regras do seu CSS permanecem inalteradas */
+
 
 h4{
     color: white !important;

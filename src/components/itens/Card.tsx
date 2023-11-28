@@ -16,8 +16,12 @@ function Card ({produto}: {produto: Produto}){
                 <div className={`card-body ${styles.card_body}`}>
                     <h2 className={`card-title ${styles.card_title}`}>{produto.name}</h2>
                     <p className={`card-text ${styles.card_text}`}>{produto.descricao}</p>
-                    <h4>Valor: {produto.price}</h4>
-
+                    <div className="price-button-container">
+                        <div className="d-flex align-items-center">
+                            <h4 className="mb-0 me-2">Valor: {produto.price}</h4>
+                            <button className={`btn btn-success ${styles.buyButton}`}>Comprar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
