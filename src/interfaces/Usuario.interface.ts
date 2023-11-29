@@ -5,7 +5,6 @@ interface Usuario {
     senha: string;
     cidade: string;
     uf: string;
-
 }
   
   export default Usuario;

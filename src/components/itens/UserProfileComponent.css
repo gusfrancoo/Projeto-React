@@ -1,0 +1,23 @@
+*{
+    color: white;
+}
+
+.card{
+    margin: 100px;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    background-color: #222;
+}
+
+.card h1{
+    color: white;
+}
+
+.img{
+    width: 100px;
+    height: 60px;
+}

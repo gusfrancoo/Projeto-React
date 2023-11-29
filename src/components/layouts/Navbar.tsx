@@ -27,6 +27,10 @@ function Navbar(){
                     <li className={styles.item}>
                         <Link to="/login">Entrar</Link>
                     </li>
+
+                    <li className={styles.item}>
+                        <Link to="/Perfil">Perfil</Link>
+                    </li>
                 </ul>
         </nav>
     )
