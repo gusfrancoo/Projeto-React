@@ -46,7 +46,7 @@ function CriaProduto(){
     }
 
     const searchLastId = async () =>{
-        const response = await fetch("http://localhost:8080/produtos", {
+        const response = await fetch("http://localhost:8080/produtos/", {
             method: "GET",
             headers:{
                 'Content-Type':'application/json'

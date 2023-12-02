@@ -1,11 +1,10 @@
 interface Produto {
-    length: number;
-    id: number;
     name: string;
     price: number;
-    tipo: string;
+    // tipo: string;
     descricao?: string;
     imageSrc: string;
+    // nao deve ser enviado na rota
     handleRemove?: any|null;
   }
   

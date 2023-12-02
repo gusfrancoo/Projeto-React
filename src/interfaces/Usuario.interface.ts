@@ -1,10 +1,11 @@
 interface Usuario {
-    id: number;
-    nome: string;
-    email: string;
-    senha: string;
+    name: string;
+    username: string;
+    password: string;
     cidade: string;
+    logradouro: string;
     uf: string;
+    bairro: string;
 
 }
   
