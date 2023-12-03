@@ -23,7 +23,7 @@ function Home (){
     } 
 
     useEffect(()=>{
-        fetch("http://localhost:8080/produtos",{
+        fetch("http://localhost:8080/produtos/",{
             method: "GET",
             headers:{
                 "Content-Type":"application/json"

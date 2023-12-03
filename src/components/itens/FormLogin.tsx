@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import FormLoginProps from "../../interfaces/FormLogin";
+import Login from "../../interfaces/Login.interface";
+
 import styles from "./FormLogin.module.css"
 import Input from "./Input";
 import SubmitButton from "./SubmitButton";
@@ -38,18 +40,18 @@ function FormLogin({handleSubmit, loginData, btnText}: FormLoginProps){
                 <Input 
                     type="text"
                     text="Email"
-                    name="email"
+                    name="username"
                     placeholder="example@email.com"
                     handleOnChange={handleChange}
-                    value={login.email}
+                    value={login.username}
                     />
                 <Input 
                     type="text"
                     text="Senha"
-                    name="senha"
+                    name="password"
                     placeholder="insira sua senha"
                     handleOnChange={handleChange}
-                    value={login.senha}
+                    value={login.password}
                     />
 
                     <button className={`btn col-sm-4 btn-primary ${styles.btn}`}>{btnText}</button>

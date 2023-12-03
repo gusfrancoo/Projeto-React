@@ -54,14 +54,14 @@ function FormCriaProduto ({handleSubmit, produtoData, btnText}: FormCriaProdutoP
                     handleOnChange={handleChange}
                     value={produto.price}
                     />
-                <Input 
+                {/* <Input 
                     type="text"
                     text="Tipo"
                     name="tipo"
                     placeholder="Insira o tipo do produto: "
                     handleOnChange={handleChange}
                     value={produto.tipo}
-                    />
+    /> */}
                 <Input 
                     type="text"
                     text="Descrição"

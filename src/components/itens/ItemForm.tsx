@@ -37,21 +37,21 @@ function ItemForm({handleSubmit, userData, btnText}: ItemFormProps){
                         name="name"
                         placeholder="Insira seu Nome"
                         handleOnChange={handleChange}
-                        value={usuario.nome} />
+                        value={usuario.name} />
                     <Input 
                         type="text"
-                        text="Email"
-                        name="email"
-                        placeholder="example@email.com"
+                        text="Username"
+                        name="username"
+                        placeholder="username_example"
                         handleOnChange={handleChange}
-                        value={usuario.email} />
+                        value={usuario.username} />
                     <Input 
                         type="password"
                         text="Senha"
-                        name="senha"
+                        name="password"
                         placeholder="Insira sua senha"
                         handleOnChange={handleChange}
-                        value={usuario.senha } />
+                        value={usuario.password } />
                     <Input 
                         type="text"
                         text="Cidade"
@@ -67,6 +67,13 @@ function ItemForm({handleSubmit, userData, btnText}: ItemFormProps){
                         handleOnChange={handleChange}
                         value={usuario.uf } />
                         
+                    <Input 
+                        type="text"
+                        text="Bairro"
+                        name="bairro"
+                        placeholder="Bairro"
+                        handleOnChange={handleChange}
+                        value={usuario.bairro } />
                     <div>
                         <SubmitButton text={btnText} />
                     </div>
