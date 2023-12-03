@@ -32,10 +32,13 @@ function Home (){
         .then((response)=> response.json())
         .then((data) => {
             setProdutos(data);
+            console.log(data);
+            return
         })
         .catch((erro)=> console.log(erro));
 
     }, [])
+
 
 
     const groupedProducts = produtos ? produtos.reduce((acc: Produto[][], product: Produto) => {

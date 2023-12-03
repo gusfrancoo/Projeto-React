@@ -6,8 +6,26 @@ import "/img/hogwarts_legacy.jpg"
 function Card ({produto}: {produto: Produto}){
     const remove = (e:any) =>{
         e.preventDefault();
-        produto.handleRemove(produto.id);
+        produto.handleRemove(produto.idProduto);
     }
+
+    const handleBuy = (productId) => {
+        // console.log(produto.idProduto);
+        const id = produto.idProduto;
+        fetch(`http://localhost:8005/comprar/${id}`,{
+            method: "GET",
+            headers:{
+                "Content-Type":"application/json"
+            }
+        })
+        .then((response)=> response.json())
+        .then((data) => {
+            
+        })
+        .catch((erro)=> console.log(erro));
+    };
+    
+
 
     return(
         <div className={`card ${styles.card}`}>
@@ -19,7 +37,7 @@ function Card ({produto}: {produto: Produto}){
                     <div className="price-button-container">
                         <div className="d-flex align-items-center">
                             <h4 className="mb-0 me-2">Valor: {produto.price}</h4>
-                            <button className={`btn btn-success ${styles.buyButton}`}>Comprar</button>
+                            <button className={`btn btn-success ${styles.buyButton}`} onClick={() => handleBuy(produto.idProduto)} >Comprar</button>
                         </div>
                     </div>
                 </div>

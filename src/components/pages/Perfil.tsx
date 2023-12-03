@@ -4,7 +4,6 @@ import { UserProfile } from '../../interfaces/UserProfile.interface'; // Ajuste 
 
 const Perfil: React.FC = () => {
     const userProfileData: UserProfile = {
-        id: 'user123',
         name: 'John Doe',
         email: 'johndoe@example.com',
         bio: 'Developer and tech enthusiast.',

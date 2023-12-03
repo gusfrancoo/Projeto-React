@@ -10,6 +10,7 @@ function Login(){
     const location = useLocation();
     const redirect = useNavigate();
     const [msg, setMensagem] = useState("");
+    // const [logado, setLogado] = useState(false);
 
 
     const getUser = async (login : LoginData) => {
@@ -19,7 +20,7 @@ function Login(){
             return;
         }
 
-        const user = await fetch(`http://localhost:8005/login`, {
+        const user = await fetch(`http://localhost:8005/login/`, {
             method: "POST",
             headers:{
                 'Content-Type':'application/json'
@@ -30,6 +31,7 @@ function Login(){
         if(user.ok){
             const usuario = await user.json();
             if(usuario.token){
+                // setLogado(true);
                 redirect('/home');
 
             } else {

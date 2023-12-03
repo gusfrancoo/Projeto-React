@@ -6,6 +6,7 @@ interface Produto {
     imageSrc: string;
     // nao deve ser enviado na rota
     handleRemove?: any|null;
+    handleSubmit?: any|null;
   }
   
   export default Produto;
