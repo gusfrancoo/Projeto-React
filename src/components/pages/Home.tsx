@@ -23,7 +23,7 @@ function Home (){
     } 
 
     useEffect(()=>{
-        fetch("http://localhost:8080/produtos/",{
+        fetch("http://localhost:8005/produtos/",{
             method: "GET",
             headers:{
                 "Content-Type":"application/json"
@@ -36,6 +36,7 @@ function Home (){
         .catch((erro)=> console.log(erro));
 
     }, [])
+
 
     const groupedProducts = produtos ? produtos.reduce((acc: Produto[][], product: Produto) => {
         const lastGroup = acc[acc.length -1];

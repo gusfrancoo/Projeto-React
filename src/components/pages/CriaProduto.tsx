@@ -19,13 +19,9 @@ function CriaProduto(){
 
     const criaProduto = async (produto: Produto) => {
         const camposPreenchidos = verificaCampos(produto);
-        const ultimoId = await searchLastId();
-
-        produto.id = ultimoId + 1;
-
 
         if(camposPreenchidos){
-            const response = await fetch("http://localhost:8080/produtos", {   
+            const response = await fetch("http://localhost:8005/produtos/", {   
                 method: "POST",
                 headers:{
                     'Content-Type':'application/json'
@@ -45,32 +41,6 @@ function CriaProduto(){
 
     }
 
-    const searchLastId = async () =>{
-        const response = await fetch("http://localhost:8080/produtos/", {
-            method: "GET",
-            headers:{
-                'Content-Type':'application/json'
-            }
-        });
-
-        if(!response.ok){
-            console.error("Erro ao buscar os dados")
-            return;
-        }
-
-        const data = await response.json();
-
-        let maxId = 0;
-
-        for(const item of data){
-            if(item.id > maxId){
-                maxId = item.id;
-            }
-        }
-
-        return maxId;
-
-    }
 
     const verificaCampos =  (produto: any) => {
         for(const campo in produto){

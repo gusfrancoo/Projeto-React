@@ -11,14 +11,10 @@ function Cadastro(){
     
     const createUser = async (usuario: Usuario) => {
 
-        let existeUsuario = await verificaUsuario(usuario.email);
+        // let existeUsuario = await verificaUsuario(usuario.username);
 
-        if(existeUsuario){
-            console.error("Usuario ja cadastrado");
-            return;
-        }
-        
-        const response = await fetch("http://localhost:8080/pessoa", {
+   
+        const response = await fetch("http://localhost:8005/register", {
             method: "POST",
             headers:{
                 'Content-Type':'application/json'
@@ -31,25 +27,6 @@ function Cadastro(){
             history("/home");
             return;
         }
-    }
-
-    const verificaUsuario = async (usuario: Usuario) => {
-        const checkUser = await fetch(`http://localhost:8080/pessoa/${usuario}`, {
-            method: "GET",
-            headers:{
-                'Content-Type':'application/json'
-            }
-        })
-        if(checkUser.ok){
-            const data = await checkUser.json();
-            if(data.length === 0){
-                return false;
-            }
-            if(data[0].email === usuario){
-                return true;
-            }
-        }
-
     }
 
 
