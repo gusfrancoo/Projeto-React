@@ -41,7 +41,7 @@ function Home (){
     const groupedProducts = produtos ? produtos.reduce((acc: Produto[][], product: Produto) => {
         const lastGroup = acc[acc.length -1];
 
-        if(lastGroup.length < 2){
+        if(lastGroup.length < 3){
             lastGroup.push(product)
         } else {
             acc.push([product]);
@@ -65,6 +65,8 @@ function Home (){
             {groupedProducts.length === 0 &&
                 <p>Não há Produtos</p>
             }
+
+            
 
         </>
 
