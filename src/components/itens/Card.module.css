@@ -20,12 +20,11 @@ body.visivle {
 
 
 .card_img_top{
-    width: 100%;
-    height: 185px;
-    object-fit: cover;
+    width: 200%;
+    height: 285px;
     transition: transform 0.3s ease, z-index 0.3s ease; /* transição suave */
     z-index: 1; /* z-index padrão */
-    margin-top: 10px;
+    margin-top: 190px;
     
 }
 
@@ -37,9 +36,7 @@ body.visivle {
     height: 18em;
 }
 
-.card:hover .card_title{
-    margin-bottom: 20px !important;
-}
+
 
 .color-custom{
     color: white;
@@ -52,9 +49,7 @@ body.visivle {
     margin-top: 50px;
 }
 
-.card div{
-    
-}
+
 
 .card {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 1.1) !important;
@@ -70,7 +65,7 @@ body.visivle {
 .card_title{
     font: 800;
     color: white !important;
-    margin-bottom: 150px !important;
+    margin-bottom: 50px !important;
 }
 
 .card_text{
