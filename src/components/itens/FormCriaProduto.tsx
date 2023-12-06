@@ -71,11 +71,12 @@ function FormCriaProduto ({handleSubmit, produtoData, btnText}: FormCriaProdutoP
                     value={produto.descricao}
                     />
                 <Input 
-                    type="file"
-                    text="Imagens"
-                    name="images"
+                    type="text"
+                    text="Imagem"
+                    name="imageSrc"
+                    placeholder="Insira o preço do produto: "
                     handleOnChange={handleChange}
-                    multiple
+                    value={produto.imageSrc}
                     />
             
             <div>
