@@ -10,25 +10,43 @@ function Cadastro(){
     const history = useNavigate();
     
     const createUser = async (usuario: Usuario) => {
-
-        // let existeUsuario = await verificaUsuario(usuario.username);
-
-   
-        const response = await fetch("http://localhost:8005/register", {
-            method: "POST",
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body: JSON.stringify(usuario)
-        });
-        
-        if(response.ok){
-            console.log("Usuario criado com Sucesso.")
-            history("/home");
-            return;
+        try {
+            const response = await fetch("http://localhost:8005/register", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(usuario)
+            });
+            
+            if (response.ok) {
+                // Exibir SweetAlert de sucesso
+                Swal.fire({
+                    title: 'Sucesso!',
+                    text: 'Usuário criado com sucesso!',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                });
+                history("/home");
+            } else {
+                // Tratar resposta não-ok
+                Swal.fire({
+                    title: 'Erro!',
+                    text: 'Falha ao criar usuário, tente novamente, usuário ja existe!',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                });
+            }
+        } catch (error) {
+            // Tratar erro na requisição
+            Swal.fire({
+                title: 'Erro!',
+                text: 'Erro ao realizar a requisição de cadastro.',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
         }
     }
-
 
     return(
         <Container customClass="cadContainer"> 
