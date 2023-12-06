@@ -14,33 +14,53 @@ function Login(){
 
 
     const getUser = async (login : LoginData) => {
-
-        if(!login.password){
-            alert("Insira a sua senha.");
-            return;
-        }
-
-        const user = await fetch(`http://localhost:8005/login/`, {
-            method: "POST",
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body: JSON.stringify(login)
-        });
-
-        if(user.ok){
-            const usuario = await user.json();
-            if(usuario.token){
-                // setLogado(true);
-                redirect('/home');
-
+        try {
+            const user = await fetch(`http://localhost:8005/login/`, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(login)
+            });
+    
+            if (user.ok) {
+                const usuario = await user.json();
+                if (usuario.token) {
+                    // Exibir SweetAlert de sucesso
+                    Swal.fire({
+                        title: 'Sucesso!',
+                        text: 'Login realizado com sucesso!',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    });
+                    redirect('/home');
+                } else {
+                    // Exibir SweetAlert de erro
+                    Swal.fire({
+                        title: 'Erro!',
+                        text: 'Não encontramos seu token de acesso.',
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    });
+                }
             } else {
-                alert("Não encontramos seu token de acesso.")
+                // Tratar resposta não-ok
+                Swal.fire({
+                    title: 'Erro!',
+                    text: 'Falha no login, tente novamente.',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                });
             }
-
+        } catch (error) {
+            // Tratar erro na requisição
+            Swal.fire({
+                title: 'Erro!',
+                text: 'Erro ao realizar a requisição de login.',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
         }
-
-        
     }
 
     return(
