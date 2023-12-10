@@ -4,16 +4,14 @@ import Container from "../layouts/Container";
 import FormLogin from "../itens/FormLogin";
 import LoginData from "../../interfaces/Login.interface";
 import { useLocation, useNavigate } from 'react-router-dom';
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react';
 
-function Login(){
+function Login() {
     const location = useLocation();
     const redirect = useNavigate();
     const [msg, setMensagem] = useState("");
-    // const [logado, setLogado] = useState(false);
 
-
-    const getUser = async (login : LoginData) => {
+    const getUser = async (login: LoginData) => {
         try {
             const user = await fetch(`http://localhost:8005/login/`, {
                 method: "POST",
@@ -22,10 +20,14 @@ function Login(){
                 },
                 body: JSON.stringify(login)
             });
-    
+
             if (user.ok) {
                 const usuario = await user.json();
                 if (usuario.token) {
+                    // Salvando token e username no Local Storage
+                    localStorage.setItem('token', usuario.token);
+                    localStorage.setItem('username', login.username);
+
                     // Exibir SweetAlert de sucesso
                     Swal.fire({
                         title: 'Sucesso!',
@@ -33,7 +35,12 @@ function Login(){
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     });
+
+                    // Redirecionar para a página desejada
                     redirect('/home');
+
+                    // Dar um refresh na página
+                    window.location.reload();
                 } else {
                     // Exibir SweetAlert de erro
                     Swal.fire({
@@ -63,15 +70,14 @@ function Login(){
         }
     }
 
-    return(
-        <Container customClass="cadContainer"> 
+    return (
+        <Container customClass="cadContainer">
             <div className={`container-fluid ${styles.container}`}>
-                    <FormLogin handleSubmit={getUser}
-                        btnText="Enviar"
-                        loginData={{}}/>
+                <FormLogin handleSubmit={getUser}
+                    btnText="Entrar"
+                    loginData={{}} />
             </div>
         </Container>
-
     )
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import Container from './components/layouts/Container';
 import Navbar from './components/layouts/Navbar';
@@ -23,17 +23,39 @@ const Layout = (props: LayoutProps) => {
 }
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // Efeito para verificar o status de login quando o app carregar
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    setIsLoggedIn(!!token);
+  }, []);
+
+  // Função para lidar com o login
+  const handleLogin = (token, username) => {
+    localStorage.setItem('token', token);
+    localStorage.setItem('username', username);
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    console.log("loggout acionado");
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    // Atualize o estado para refletir que o usuário não está mais logado
+    setIsLoggedIn(false);
+  };
   return (
     <Router>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} />
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         
-        <Route path='/login' element = {
-          <Layout>
-            <Login />
-          </Layout>
-        }/>
+        <Route path='/login' element={
+        <Layout>
+          <Login onLogin={handleLogin} onLogout={handleLogout}/>
+        </Layout>
+      }/>
         <Route path='/home' element = {
           <Layout>
             <Home />
@@ -49,9 +71,9 @@ function App() {
             <CriaProduto />
           </Layout>
         }/>
-        <Route path='/Perfil' element = {
+        <Route path='/Perfil' element={
           <Layout>
-            <Perfil />
+           <Perfil onLogout={handleLogout} />
           </Layout>
         }/>
 

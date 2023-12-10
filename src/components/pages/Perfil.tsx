@@ -1,18 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import UserProfileComponent from '../itens/UserProfileComponent';
-import { UserProfile } from '../../interfaces/UserProfile.interface'; // Ajuste o caminho conforme necessário
+import { UserProfile } from '../../interfaces/UserProfile.interface';
+import { useNavigate } from 'react-router-dom'; // Importe useNavigate
 
 const Perfil: React.FC = () => {
-    const userProfileData: UserProfile = {
-        name: 'John Doe',
-        email: 'johndoe@example.com',
-        bio: 'Developer and tech enthusiast.',
-        profilePictureUrl: 'https://static.vecteezy.com/system/resources/previews/017/196/586/non_2x/user-icon-on-transparent-background-free-png.png',
+    const [userProfile, setUserProfile] = useState<UserProfile>({
+        name: '',
+        email: '',
+        bio: '',
+        profilePictureUrl: '',
+    });
+
+    const navigate = useNavigate(); // Inicialize o hook useNavigate
+
+    useEffect(() => {
+        const username = localStorage.getItem('username');
+        if (username) {
+            setUserProfile(prevState => ({
+                ...prevState,
+                name: username,
+            }));
+        }
+        // Aqui você pode adicionar código para carregar outros dados do usuário, se necessário
+    }, []);
+
+    const onLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('username');
+        // Redirecionar para a página inicial após o logout
+        
+        navigate('/home'); // Use navigate para redirecionar
+        window.location.reload();
     };
 
     return (
         <div>
-            <UserProfileComponent userProfile={userProfileData} />
+            <UserProfileComponent userProfile={userProfile} onLogout={onLogout} />
         </div>
     );
 };
