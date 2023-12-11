@@ -95,3 +95,33 @@ body.visivle {
 h4{
     color: white !important;
 }
+
+
+.label{
+    flex: 1; /* Cada item ocupa uma fração igual do espaço disponível */
+    margin-right: 10px;
+    padding-left: 15px;
+}
+
+.label:last-child{
+    margin-right: 0;
+}
+
+.labelText{
+    color: black;
+    padding-left: 5px;
+}
+
+.modal_body{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+
+.paragraph{
+    font-size: 30px;
+    color: black;
+
+}

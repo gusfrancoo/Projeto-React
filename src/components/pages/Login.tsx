@@ -9,9 +9,9 @@ import { useState, useEffect } from 'react';
 function Login() {
     const location = useLocation();
     const redirect = useNavigate();
-    const [msg, setMensagem] = useState("");
+    
 
-    const getUser = async (login: LoginData) => {
+    const getUser = async (login) => {
         try {
             const user = await fetch(`http://localhost:8005/login/`, {
                 method: "POST",
@@ -20,29 +20,27 @@ function Login() {
                 },
                 body: JSON.stringify(login)
             });
-
+    
             if (user.ok) {
                 const usuario = await user.json();
                 if (usuario.token) {
-                    // Salvando token e username no Local Storage
                     localStorage.setItem('token', usuario.token);
                     localStorage.setItem('username', login.username);
-
-                    // Exibir SweetAlert de sucesso
+    
                     Swal.fire({
                         title: 'Sucesso!',
                         text: 'Login realizado com sucesso!',
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     });
-
-                    // Redirecionar para a página desejada
+    
                     redirect('/home');
 
-                    // Dar um refresh na página
-                    window.location.reload();
+                    // Espera por 1 segundos antes de dar reload
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000); // 1000 milissegundos = 1 segundos
                 } else {
-                    // Exibir SweetAlert de erro
                     Swal.fire({
                         title: 'Erro!',
                         text: 'Não encontramos seu token de acesso.',
@@ -51,7 +49,6 @@ function Login() {
                     });
                 }
             } else {
-                // Tratar resposta não-ok
                 Swal.fire({
                     title: 'Erro!',
                     text: 'Falha no login, tente novamente.',
@@ -60,7 +57,6 @@ function Login() {
                 });
             }
         } catch (error) {
-            // Tratar erro na requisição
             Swal.fire({
                 title: 'Erro!',
                 text: 'Erro ao realizar a requisição de login.',
@@ -69,7 +65,6 @@ function Login() {
             });
         }
     }
-
     return (
         <Container customClass="cadContainer">
             <div className={`container-fluid ${styles.container}`}>

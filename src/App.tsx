@@ -7,7 +7,8 @@ import Cadastro from "./components/pages/Cadastro";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/pages/Login';
 import CriaProduto from './components/pages/CriaProduto';
-import Perfil from './components/pages/Perfil'
+import Perfil from './components/pages/Perfil';
+import Footer from './components/layouts/Footer';
 
 
 interface LayoutProps {
@@ -78,6 +79,7 @@ function App() {
         }/>
 
       </Routes>
+      <Footer />
     </Router>
   );
 }
