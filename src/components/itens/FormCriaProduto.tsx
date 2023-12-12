@@ -74,7 +74,7 @@ function FormCriaProduto ({handleSubmit, produtoData, btnText}: FormCriaProdutoP
                     type="text"
                     text="Imagem"
                     name="imageSrc"
-                    placeholder="Insira o preço do produto: "
+                    placeholder="Insira o diretorio da imagem: "
                     handleOnChange={handleChange}
                     value={produto.imageSrc}
                     />
