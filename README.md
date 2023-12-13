@@ -87,7 +87,7 @@
     <h2>Execução do Projeto</h2>
     <ol>
         <li>Clone o repositório do projeto usando Git: <br>
-            <code>git clone https://github.com/gusfrancoo/Projeto-API-DevWeb ou acesse o link <a href="https://github.com/gusfrancoo/Projeto-API-DevWeb"> </code>
+            <code>git clone https://github.com/gusfrancoo/Projeto-API-DevWeb ou acesse o link <a href="https://github.com/gusfrancoo/Projeto-API-DevWeb">Link repositório API</a> </code>
         </li>
         <li>Navegue até o diretório do projeto e instale as dependências: <br>
             <code>cd caminho_para_projeto</code><br>
