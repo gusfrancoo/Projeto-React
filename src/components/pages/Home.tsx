@@ -41,33 +41,29 @@ function Home (){
 
 
 
-    const groupedProducts = produtos ? produtos.reduce((acc: Produto[][], product: Produto) => {
-        const lastGroup = acc[acc.length -1];
-
-        if(lastGroup.length < 3){
-            lastGroup.push(product)
-        } else {
-            acc.push([product]);
+    const groupedProducts = produtos ? produtos.reduce((acc, product, index) => {
+        const groupIndex = Math.floor(index / 4); // Altere 4 para o número de itens por linha desejado
+        if (!acc[groupIndex]) {
+            acc[groupIndex] = [];
         }
+        acc[groupIndex].push(product);
         return acc;
-
-    }, [[]]): [[]];
+    }, []) : [[]];
 
     return (
         <>
             {mensagem && <Mensagem msg={mensagem} type="sucesso" />}
-            {groupedProducts.length > 0 &&
-            groupedProducts.map((group, index)=>(
-                <Row key={index}>
-                    {group.map((produto: Produto)=>(
-                        <Card key={produto.id} produto={produto}/>
-                    ))}
-                </Row>
-                
-            ))}
-            {groupedProducts.length === 0 &&
-                <p>Não há Produtos</p>
-            }
+                {groupedProducts.length > 0 &&
+                groupedProducts.map((group, index) => (
+                    <Row key={index}>
+                        {group.map(produto => (
+                            <Card key={produto.id} produto={produto}/>
+                        ))}
+                    </Row>
+                ))}
+                {groupedProducts.length === 0 &&
+                    <p>Não há Produtos</p>
+                }
 
             
 
