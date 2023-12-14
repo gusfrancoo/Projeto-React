@@ -54,26 +54,11 @@ function ItemForm({handleSubmit, userData, btnText}: ItemFormProps){
                         value={usuario.password } />
                     <Input 
                         type="text"
-                        text="Cidade"
-                        name="cidade"
-                        placeholder="insira sua cidade"
+                        text="cpfCnpj"
+                        name="cpfCnpj"
+                        placeholder="insira seu cpf ou cnpj"
                         handleOnChange={handleChange}
-                        value={usuario.cidade} />
-                    <Input 
-                        type="text"
-                        text="UF"
-                        name="uf"
-                        placeholder="Insira UF da cidade"
-                        handleOnChange={handleChange}
-                        value={usuario.uf } />
-                        
-                    <Input 
-                        type="text"
-                        text="Bairro"
-                        name="bairro"
-                        placeholder="Bairro"
-                        handleOnChange={handleChange}
-                        value={usuario.bairro } />
+                        value={usuario.cpfCnpj} />
                     <div>
                         <SubmitButton text={btnText} />
                     </div>
