@@ -71,7 +71,7 @@ function FormCriaProduto ({handleSubmit, produtoData, btnText}: FormCriaProdutoP
                     placeholder="Insira a descricao do produto: "
                     handleOnChange={handleChange}
                     value={produto.descricao}
-                    maxLength={150}
+                    maxLength={120}
                     />
                 <Input 
                     type="text"
@@ -80,7 +80,6 @@ function FormCriaProduto ({handleSubmit, produtoData, btnText}: FormCriaProdutoP
                     placeholder="Insira o diretorio da imagem: "
                     handleOnChange={handleChange}
                     value={produto.imageSrc}
-                    maxLength={150}
                     />
             
             <div>
