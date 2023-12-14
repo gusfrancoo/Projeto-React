@@ -7,6 +7,12 @@ import React, { useState } from 'react';
 function Card ({produto}: {produto: Produto}){
     const [showModal, setShowModal] = useState(false);
 
+    const isAuthenticated = () => {
+        const token = localStorage.getItem('token');
+        const username = localStorage.getItem('username');
+        return token && username;
+    };
+    
     const remove = (e:any) =>{
         e.preventDefault();
         produto.handleRemove(produto.idProduto);
@@ -27,10 +33,60 @@ function Card ({produto}: {produto: Produto}){
         })
         .catch((erro)=> console.log(erro));
 
-        setShowModal(true);
+        
+        if (isAuthenticated()) {
+            setShowModal(true);
+        return;
+    }
     };
     
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    
+        const purchaseData = {
+            idProduto: produto.idProduto,
+            cpfCnpj: (document.getElementById('CPFCNPJ') as HTMLInputElement).value,
+            email: (document.getElementById('email') as HTMLInputElement).value,
+            cidade: (document.getElementById('cidade') as HTMLInputElement).value,
+            logradouro: (document.getElementById('logradouro') as HTMLInputElement).value,
+            uf: (document.getElementById('uf') as HTMLInputElement).value,
+            bairro: (document.getElementById('bairro') as HTMLInputElement).value,
+            // Outros campos conforme necessário
+        };
+    
+        const userToken = localStorage.getItem('token');
+        const username = localStorage.getItem('username');
+    
+        // Inclua aqui a URL do endpoint do servidor
+        const url = `http://localhost:8005/comprar/`; // Substitua '/endpoint' pelo endpoint correto
+        console.log(purchaseData);
+        try {
+            const response = await fetch(url, {
+                method: 'POST', // ou 'PUT', dependendo da operação desejada
+                headers: {
+                    'Content-Type': 'application/json',
+                    // Inclua token e username nos headers, se necessário
+                    'Authorization': `Bearer ${userToken}`,
+                    'Username': username
+                },
+                body: JSON.stringify(purchaseData)
+            });
+    
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+    
+            const data = await response.json();
+            console.log('Success:', data);
+            console.log(purchaseData);
+            // Lógica adicional após o sucesso da requisição
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
 
+
+    
 
     return(
     <>
@@ -109,7 +165,7 @@ function Card ({produto}: {produto: Produto}){
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Fechar</button>
-                                <button type="button" className="btn btn-primary">Finalizar Compra</button>
+                                <button type="button" className="btn btn-primary" onClick={handleSubmit}>Finalizar Compra</button>
                             </div>
                         </div>
                     </div>
