@@ -5,6 +5,7 @@ interface InputProps{
     placeholder?: string ; 
     handleOnChange?: any|null;
     value?: any|null;
+    maxLength?: number;
 }
 
 export default InputProps;

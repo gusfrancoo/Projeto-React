@@ -45,6 +45,7 @@ function FormCriaProduto ({handleSubmit, produtoData, btnText}: FormCriaProdutoP
                     placeholder="Insira o nome do produto: "
                     handleOnChange={handleChange}
                     value={produto.name}
+                    maxLength={150}
                     />
                 <Input 
                     type="text"
@@ -53,6 +54,7 @@ function FormCriaProduto ({handleSubmit, produtoData, btnText}: FormCriaProdutoP
                     placeholder="Insira o preço do produto: "
                     handleOnChange={handleChange}
                     value={produto.price}
+                    maxLength={150}
                     />
                 {/* <Input 
                     type="text"
@@ -69,6 +71,7 @@ function FormCriaProduto ({handleSubmit, produtoData, btnText}: FormCriaProdutoP
                     placeholder="Insira a descricao do produto: "
                     handleOnChange={handleChange}
                     value={produto.descricao}
+                    maxLength={150}
                     />
                 <Input 
                     type="text"
@@ -77,6 +80,7 @@ function FormCriaProduto ({handleSubmit, produtoData, btnText}: FormCriaProdutoP
                     placeholder="Insira o diretorio da imagem: "
                     handleOnChange={handleChange}
                     value={produto.imageSrc}
+                    maxLength={150}
                     />
             
             <div>

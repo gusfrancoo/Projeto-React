@@ -2,6 +2,7 @@ import Produto from '../../interfaces/Produto.interface';
 import Row from '../layouts/Row';
 import styles from "./Card.module.css"
 import "/img/hogwarts_legacy.jpg"
+import "/img/gta-5.jpeg"
 import React, { useState } from 'react';
 
 function Card ({produto}: {produto: Produto}){
